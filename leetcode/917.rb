@@ -6,10 +6,10 @@ def reverse_only_letters(s)
     str = s.split("")
     stack = []
     s.each_char do |char|
-        stack.push(char) if char.match(/^[[:alpha:]]$/) # regex to check if char is alphanumeric
+        stack.push(char) if char.match(/[[:alnum:]]/) # regex to check if char is alphanumeric
     end
     str.map! do |char|
-        if char.match(/^[[:alpha:]]$/)
+        if char.match(/[[:alpha:]]/)
             char = stack.pop() 
         else
             char
@@ -17,3 +17,4 @@ def reverse_only_letters(s)
     end
     str.join('')
 end
+
