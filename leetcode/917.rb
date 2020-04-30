@@ -18,3 +18,18 @@ def reverse_only_letters(s)
     str.join('')
 end
 
+# One pass solution
+
+# @param {String} s
+# @return {String}
+def reverse_only_letters(s)
+    j = s.length - 1
+    s.each_char.with_index do |char, i|
+        return s if i >= j
+        if char.match(/[[:alpha:]]/)
+            j -= 1 until s[j].match(/[[:alpha:]]/)
+            s[i], s[j] = s[j], s[i]
+            j -= 1
+        end
+    end
+end
