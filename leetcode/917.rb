@@ -33,3 +33,22 @@ def reverse_only_letters(s)
         end
     end
 end
+
+# better because no nested loop or duplicated conditions
+
+def reverse_only_letters(s)
+    i = 0
+    j = s.length - 1
+    while i < j
+        if !s[i].match(/[[:alpha:]]/)
+            i += 1
+        elsif !s[j].match(/[[:alpha:]]/)
+            j -= 1
+        else
+            s[i], s[j] = s[j], s[i]
+            i += 1
+            j -= 1
+        end
+    end
+    return s
+end
