@@ -11,6 +11,7 @@
 
 # @param {Node} root
 # @return {List[int]}
+
 def postorder(root)
     return [] if !root
     return [root.val] if root.children.empty?
