@@ -12,6 +12,8 @@
 # @param {TreeNode} s
 # @param {TreeNode} t
 # @return {Boolean}
+
+# NOT COMPLETE!
 def is_subtree(s, t)
     tree = dfs(s)
     target = dfs(t)
