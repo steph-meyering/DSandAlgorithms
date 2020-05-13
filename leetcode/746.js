@@ -8,7 +8,6 @@ var minCostClimbingStairs = function (cost) {
   let total = new Array(cost.length + 1).fill(Infinity);
   total[0] = 0;
   total[1] = cost[0];
-  let minCost = Infinity;
   for (let i = 1; i < total.length; i++) {
     if (i > 1) {
       total[i] = cost[i - 1] + Math.min(total[i - 1], total[i - 2]);
