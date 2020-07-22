@@ -15,3 +15,18 @@ class Solution:
             self.helper(root.left, res)
             res.append(root.val)
             self.helper(root.right, res)
+
+# iterative solution
+
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        stack = []
+        res = []
+        while stack or root:
+            if root:
+                stack.append(root)
+                root = root.left
+            else:
+                node = stack.pop()
+                res.append(node.val)
+                root = node.right
+        return res
