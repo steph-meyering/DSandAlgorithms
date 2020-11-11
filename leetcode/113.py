@@ -14,6 +14,6 @@ class Solution:
         if root:
             path.append(root.val)
             if not root.left and not root.right and s == root.val:
-                return self.res.append(path)
-            self.dfs(root.left, s - root.val, path[:])
-            self.dfs(root.right, s - root.val, path[:])
+                return self.res.append(path[:])
+            self.dfs(root.left, s - root.val, path)
+            self.dfs(root.right, s - root.val, path)
