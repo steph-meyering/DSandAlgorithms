@@ -1,5 +1,6 @@
 import unittest
 
+# Using cyclic sort - O(n) time ; O(1) space
 
 def find_repeat(nums):
     # Find a number that appears more than once
@@ -10,6 +11,8 @@ def find_repeat(nums):
                 return nums[i]
             nums[i], nums[j] = nums[j], nums[i]
     return -1
+
+# Using modified binary search:
 
 
 # Tests
