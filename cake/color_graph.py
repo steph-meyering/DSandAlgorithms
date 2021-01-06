@@ -8,7 +8,9 @@ class GraphNode:
         self.neighbors = set()
         self.color = None
 
-# Not so good O(D*N) where D is max edges and N is input
+# Complexity: 
+  # Time: O(D*N) where D is max edges and N is input
+  # Space: O(N+1) where N is max number of edges for a node
 
 
 def color_graph(graph, colors):
