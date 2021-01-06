@@ -9,8 +9,9 @@ def find_second_largest(root_node):
         # right most node has left child: 
             # left child is leaf: return left child
             # left child has right: return rightmost child
+
     if not root_node:
-        raise InvalidRootNode("BST can't be empty")
+        raise Exception InvalidRootNode("BST can't be empty")
     prev = None
     cur = root_node
     while cur.right:
