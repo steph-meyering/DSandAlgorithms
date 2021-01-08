@@ -3,20 +3,20 @@ import unittest
 
 def get_permutations(string):
     # Generate all permutations of the input string
-    if len(string) < 2:
+    if len(string) < 2:                                 # BASE CASE
         return set([string])
     
     last_char = string[-1]
     shorter_string = string[:-1]
     
-    prev_permutations = get_permutations(shorter_string) # WHAT GOES ON HERE
+    prev_permutations = get_permutations(shorter_string) # SAVE ANSWER FOR SMALLER SUB-PROBLEM (SHORTER STRING)
     result = set()
     
-    for permutation in prev_permutations:
-        for i in range(len(shorter_string) + 1):
-            result.add(permutation[:i] + last_char + permutation[i:])
+    for permutation in prev_permutations:                 # FOR EACH SUB-PROBLEM ANSWER...
+        for i in range(len(shorter_string) + 1):          # ... GET ALL POSSIBLE INDEX POSITIONS
+            result.add(permutation[:i] + last_char + permutation[i:])   # ... INSERT THE NEW / LAST_CHAR AT EACH POSITION
     
-    return result
+    return result # RETURN NEW RESULTS TO PARENT STACK FRAME
     
 
 
